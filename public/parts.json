@@ -1,0 +1,56 @@
+[
+    {
+        "id": "6280b224001512394c95c47c",
+        "name": "AMD Ryzen 5 5600X - Ryzen 5 5000 Series",
+        "description": "Max boost will vary based on several factors, including, but not limited to: thermal paste; system cooling; motherboard design and BIOS; the latest AMD chipset driver; and the latest OS updates. Visit amd.com/pb2 for more details.",
+        "img": "https://c1.neweggimages.com/ProductImageCompressAll1280/19-113-666-V01.jpg",
+        "min-order": 4,
+        "quantity": "12",
+        "price": "$224"
+    },
+    {
+        "id": "6280b224001512394c95c47c",
+        "name": "LIAN LI LANCOOL II MESH C RGB BLACK Tempered Glass ATX Case",
+        "description": "LIAN LI LANCOOL II MESH C RGB BLACK Tempered Glass ATX Case - Black Color ,Type C Included- LANCOOL II MESH C RGB-X, SGCC / Tempered Glass ATX Mid Tower 2 x USB 3.0 / 1 x USB 3.1 Type-C (Optional) / Audio Front Ports",
+        "img": "https://c1.neweggimages.com/ProductImageCompressAll1280/13-119-362-V06.jpg",
+        "min-order": 2,
+        "quantity": "16",
+        "price": "$226"
+    },
+    {
+        "id": "6280b224d8519c362c682531",
+        "name": "Intel Core i7-12700F - Core i7 12th Gen Alder Lake 12-Core",
+        "description": "Intel Core i7-12700F - Core i7 12th Gen Alder Lake 12-Core (8P+4E) 2.1 GHz LGA 1700 65W Desktop Processor - BX8071512700F, Intel 7 Alder Lake Processor Base Power: 65W, Maximum Turbo Power: 180W",
+        "img": "https://c1.neweggimages.com/ProductImageCompressAll1280/19-118-359-03.jpg",
+        "min-order": 2,
+        "quantity": "16",
+        "price": "$226"
+    },
+    {
+        "id": "6280b224d8519c362c682531",
+        "name": "MSI MAG B660M MORTAR WIFI DDR4 LGA 1700 Intel B660 SATA",
+        "description": "MSI extended PWM heatsink and enhanced circuit design ensures even high-end processors to run in full speed.The latest Gen4 PCI-E and M.2 solution with up to 64GB/S bandwidth for maximum transfer speed.",
+        "img": "https://c1.neweggimages.com/ProductImageCompressAll1280/13-144-522-01.jpg",
+        "min-order": 2,
+        "quantity": "16",
+        "price": "$226"
+    },
+    {
+        "id": "6280b224d8519c362c682531",
+        "name": "MSI MAG B660M MORTAR WIFI DDR4 LGA 1700 Intel B660 SATA",
+        "description": "MSI extended PWM heatsink and enhanced circuit design ensures even high-end processors to run in full speed.The latest Gen4 PCI-E and M.2 solution with up to 64GB/S bandwidth for maximum transfer speed.",
+        "img": "https://c1.neweggimages.com/ProductImageCompressAll1280/13-144-522-01.jpg",
+        "min-order": 2,
+        "quantity": "16",
+        "price": "$226"
+    },
+    {
+        "id": "6280b224d8519c362c682531",
+        "name": "MSI MAG B660M MORTAR WIFI DDR4 LGA 1700 Intel B660 SATA",
+        "description": "MSI extended PWM heatsink and enhanced circuit design ensures even high-end processors to run in full speed.The latest Gen4 PCI-E and M.2 solution with up to 64GB/S bandwidth for maximum transfer speed.",
+        "img": "https://c1.neweggimages.com/ProductImageCompressAll1280/13-144-522-01.jpg",
+        "min-order": 2,
+        "quantity": "16",
+        "price": "$226"
+    }
+]

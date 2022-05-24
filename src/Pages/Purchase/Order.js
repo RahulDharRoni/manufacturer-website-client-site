@@ -1,12 +1,18 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from '../Loading/Loading';
 
 const Order = ({ buy }) => {
     const { _id, name, price, quantity } = buy
-    const [user] = useAuthState(auth)
+    const [user, loading] = useAuthState(auth)
+    // let location = useLocation();
     const navigate = useNavigate()
+
+    if (loading) {
+        return <Loading></Loading>
+    }
     const handleOrder = (event) => {
         event.preventDefault()
         // const fname = event.target.uName.value;
@@ -15,7 +21,7 @@ const Order = ({ buy }) => {
         const orders = {
             orderId: _id,
             uName: user.displayName,
-            uEmail: user.email,
+            email: user.email,
             productName: name,
             productPrice: price,
             productQuantity: quantity,

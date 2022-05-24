@@ -10,7 +10,7 @@ const Tool = ({ tool }) => {
         navigate(`/parts/${id}`)
     }
     return (
-        <div className='card w-96 bg-base-100 shadow-xl'>
+        <div className='card w-64 bg-base-100 shadow-xl'>
 
 
             <figure class="px-10 pt-10">
@@ -18,7 +18,7 @@ const Tool = ({ tool }) => {
             </figure>
             <div class="card-body items-center text-center">
                 <h2 class="card-title">{name}</h2>
-                <p>{description}</p>
+                <p className='text-sm'>{description}</p>
                 <p>{_id}</p>
                 <h5>{price}</h5>
                 <h5>{minOrder}</h5>

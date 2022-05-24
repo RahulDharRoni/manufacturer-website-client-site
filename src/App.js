@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './Pages/Shared/Header/Header';
 import Footer from './Pages/Shared/Footer/Footer';
@@ -17,6 +16,9 @@ import AddReviews from './Pages/Dashboard/AddReviews';
 import ManageAllOrder from './Pages/Dashboard/ManageAllOrder';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import DeleteProducts from './Pages/Dashboard/DeleteProducts';
+import MakeAdmin from './Pages/Dashboard/MakeAdmin';
+import Payment from './Pages/Dashboard/Payment/Payment';
+
 
 function App() {
   return (
@@ -33,12 +35,14 @@ function App() {
           </RequireAuth>
         }>
           {/* <Route index element={<Dashboard></Dashboard>}></Route> */}
-          <Route path='/dashboard/myprofile' element={<MyProfile></MyProfile>}></Route>
+          <Route path='/dashboard' element={<MyProfile></MyProfile>}></Route>
           <Route path='/dashboard/myorders' element={<MyOrders></MyOrders>}></Route>
           <Route path='/dashboard/addreviews' element={<AddReviews></AddReviews>}></Route>
           <Route path='/dashboard/manageallorder' element={<ManageAllOrder></ManageAllOrder>}></Route>
           <Route path='/dashboard/addproduct' element={<AddProduct></AddProduct>}></Route>
           <Route path='/dashboard/deleteproducts' element={<DeleteProducts></DeleteProducts>}></Route>
+          <Route path='/dashboard/makeadmin' element={<MakeAdmin></MakeAdmin>}></Route>
+          <Route path='/dashboard/payment/:id' element={<Payment></Payment>}></Route>
         </Route>
         <Route path="blogs" element={<Blogs />} />
         <Route path="login" element={<Login />} />

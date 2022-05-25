@@ -1,6 +1,6 @@
 import React from 'react';
 import Banner from './Banner/Banner';
-import CountDown from './CountDown/CountDown';
+import Community from './Community/Community';
 import HomeTools from './HomeTools/HomeTools';
 import Reviews from './Reviews/Reviews';
 
@@ -10,7 +10,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <HomeTools></HomeTools>
-            <CountDown></CountDown>
+            <Community></Community>
             <Reviews></Reviews>
         </div>
     );

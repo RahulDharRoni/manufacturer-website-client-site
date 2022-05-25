@@ -11,10 +11,10 @@ const Tool = ({ tool }) => {
     }
     return (
         <div className='card w-64 bg-base-100 shadow-xl'>
-            <figure class="px-10 pt-10">
+            <figure class="px-5 pt-5">
                 <img src={img} alt="Shoes" class="rounded-xl" />
             </figure>
-            <div class="card-body items-center text-center">
+            <div class="card-body items-center text-justify">
                 <h2 class="card-title">{name}</h2>
                 <p className='text-sm'>{description}</p>
                 <p>{_id}</p>

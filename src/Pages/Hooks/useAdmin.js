@@ -1,23 +1,27 @@
-import React from 'react';
+import { useEffect, useState } from "react"
 
-const useAdmin = () => {
-    const [admins, setAdmins] = useAdmins()
-    const { email, roll } = showUser;
-    const makeAdmin = () => {
-        fetch(`http://localhost:5000/users/admin/${email}`, {
-            method: "PUT",
-            headers: {
-                "content-type": "application/json"
-            }
-        })
-            .then(res => res.json())
-            .then(data => {
-                // refetch()
-                console.log(data)
+const useAdmin = user => {
+    const [admin, setAdmin] = useState(false);
+    const [adminLoading, setAdminLoading] = useState(true);
+    useEffect(() => {
+        const email = user?.email;
+        if (email) {
+            fetch(`https://secret-dusk-46242.herokuapp.com/admin/${email}`, {
+                method: 'GET',
+                headers: {
+                    'content-type': 'application/json',
+                    // authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                }
             })
-    }
-    return [admins]
-    );
-};
+                .then(res => res.json())
+                .then(data => {
+                    setAdmin(data.admin);
+                    setAdminLoading(false);
+                })
+        }
+    }, [user])
+
+    return [admin, adminLoading]
+}
 
 export default useAdmin;

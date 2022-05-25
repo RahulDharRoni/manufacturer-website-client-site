@@ -8,8 +8,7 @@ const Tools = () => {
 
     return (
         <div>
-
-            <div class="grid grid-cols-4 gap-4">
+            <div class="grid grid-cols-4 gap-2 mx-3 my-10">
                 {
                     tools.map(tool => <Tool
                         key={tool.id}

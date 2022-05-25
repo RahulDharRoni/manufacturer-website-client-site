@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AdminUser = ({ showUser }) => {
+const AdminUser = ({ showUser, refetch }) => {
     const { email, roll } = showUser;
 
     const makeAdmin = () => {
@@ -12,7 +12,7 @@ const AdminUser = ({ showUser }) => {
         })
             .then(res => res.json())
             .then(data => {
-                // refetch()
+                refetch()
                 console.log(data)
             })
     }

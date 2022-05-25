@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import useOrders from '../Hooks/useOrders';
-import MyOrders from './MyOrders';
+import useCommonTools from '../Tools/useCommonTools';
 
-const ManageAllOrder = () => {
-    const [showAllOrder] = useOrders()
+
+const ManageProducts = () => {
+    const [tools, setTools] = useCommonTools()
     return (
         <div className='w-full'>
 
@@ -16,20 +17,20 @@ const ManageAllOrder = () => {
                             <th>Name</th>
                             <th>Price</th>
                             <th>Quantity</th>
-                            <th>Delete Order</th>
+                            <th>Image</th>
 
                         </tr>
                     </thead>
                     <tbody>
 
                         {
-                            showAllOrder?.map(
-                                orders => <tr>
-                                    <th>1</th>
-                                    <td>{orders?.uName}</td>
-                                    <td>{orders?.productName}</td>
-                                    <td>{orders?.productPrice}</td>
-                                    <td>{orders?.productQuantity}</td>
+                            tools?.map(
+                                (tool, index) => <tr>
+                                    <th>{index + 1}</th>
+                                    <td>{tool?.name}</td>
+                                    <td>{tool?.quantity}</td>
+                                    <td>{tool?.productPrice}</td>
+                                    <td>{tool?.price}</td>
                                 </tr>
                             )
                         }
@@ -42,4 +43,4 @@ const ManageAllOrder = () => {
     );
 };
 
-export default ManageAllOrder; 
+export default ManageProducts; 

@@ -13,11 +13,12 @@ import RequireAuth from './Pages/RequireAuth/RequireAuth';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import AddReviews from './Pages/Dashboard/AddReviews';
-import ManageAllOrder from './Pages/Dashboard/ManageAllOrder';
 import AddProduct from './Pages/Dashboard/AddProduct';
-import DeleteProducts from './Pages/Dashboard/DeleteProducts';
 import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 import Payment from './Pages/Dashboard/Payment/Payment';
+import ManageOrders from './Pages/Dashboard/ManageOrders';
+import ManageProducts from './Pages/Dashboard/ManageProducts';
+import MyPortfolio from './Pages/MyPortfolio/MyPortfolio';
 
 
 function App() {
@@ -38,13 +39,14 @@ function App() {
           <Route path='/dashboard/myprofile' element={<MyProfile></MyProfile>}></Route>
           <Route path='/dashboard/myorders' element={<MyOrders></MyOrders>}></Route>
           <Route path='/dashboard/addreviews' element={<AddReviews></AddReviews>}></Route>
-          <Route path='/dashboard/manageallorder' element={<ManageAllOrder></ManageAllOrder>}></Route>
+          <Route path='/dashboard/manageproducts' element={<ManageProducts></ManageProducts>}></Route>
           <Route path='/dashboard/addproduct' element={<AddProduct></AddProduct>}></Route>
-          <Route path='/dashboard/deleteproducts' element={<DeleteProducts></DeleteProducts>}></Route>
+          <Route path='/dashboard/manageorders' element={<ManageOrders></ManageOrders>}></Route>
           <Route path='/dashboard/makeadmin' element={<MakeAdmin></MakeAdmin>}></Route>
           <Route path='/dashboard/payment/:id' element={<Payment></Payment>}></Route>
         </Route>
         <Route path="blogs" element={<Blogs />} />
+        <Route path="myportfolio" element={<MyPortfolio></MyPortfolio>} />
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<Signup />} />
       </Routes>

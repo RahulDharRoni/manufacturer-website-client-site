@@ -11,30 +11,10 @@ const MyOrders = () => {
     // const [order, setOrder] = useState();
     const [user, loading] = useAuthState(auth)
     const [deleteOrder, setDeleteOrder] = useState(null)
-    // const [order, setOrder] = useState()
 
-    // useEffect(() => {
-    //     fetch(`http://localhost:5000/orders/myorders?email=${user.email}`)
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data)
-    //             setOrder(data)
-    //         })
-    // }, [])
 
     console.log(user.email)
     const { data, refetch } = useQuery('orders', () => fetch(`http://localhost:5000/orders/myorders?email=${user.email}`).then(res => res.json()))
-
-
-
-
-    // const { data, refetch } = useQuery('order', () =>
-    //     fetch(`http://localhost:5000/orders/myorders?uEmail=${user.email}`, {
-    //         method: "GET",
-    //     }).then(res =>
-    //         res.json()
-    //     )
-    // )
 
 
     if (loading) {
@@ -53,28 +33,36 @@ const MyOrders = () => {
                             <th>Name</th>
                             <th>Price</th>
                             <th>Quantity</th>
+                            <th>Pending</th>
                             <th>PayNow</th>
                             <th>Delete Order</th>
 
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className='text-sm'>
 
                         {
-                            data?.map(orders => <tr>
-                                <th>1</th>
+                            data?.map((orders, index) => <tr>
+                                <th>{index + 1}</th>
                                 <td>{orders?.uName}</td>
                                 <td>{orders?.productName}</td>
                                 <td>{orders?.productPrice}</td>
                                 <td>{orders?.productQuantity}</td>
+                                <td>{(!orders.paid) ? <span className='text-red-500'>Pending</span> : <span className='text-gray-600'>Order Successful</span>}
+                                </td>
                                 <td>
-                                    {/* <button onClick={() => setDeleteOrder(order)} className='btn btn-sm btn-primary'>Delete</button> */}
                                     <label onClick={() => setDeleteOrder(orders)} for="delete-model" class="btn modal-button">Delete</label>
                                 </td>
                                 <td>{(orders?.productPrice && !orders.paid) && <Link to={`/dashboard/payment/${orders?._id}`}>
                                     <button className='btn btn-sm btn-primary'>Pay</button></Link>}
 
-                                    {(orders.productPrice) && <span>Payed</span>}
+                                    {(orders?.productPrice && orders.paid) &&
+                                        < div >
+                                            < span className='text-primary font-bold'>Payment Successful!pending to shipment</span>
+                                            <p className='font-sm'>Transaction If:<span className='font-bold text-blue-400'> {orders?.transactionID}</span></p>
+                                        </div>
+
+                                    }
                                 </td>
                             </tr>)
                         }

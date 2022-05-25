@@ -1,15 +1,18 @@
 import React from 'react';
 
 const ManageOrder = ({ order }) => {
-    const { name, productName, productQuantity, paid, transactionID } = allOrder
+    const { productName, productQuantity, paid, transactionID } = order
     return (
 
-        <tr>
-            <th>3</th>
-            <td>Brice Swyre</td>
-            <td>Tax Accountant</td>
-            <td>Red</td>
-        </tr>
+        <div>
+            <tr>
+                <th>1</th>
+                <td>{productName}</td>
+                <td>{productQuantity}</td>
+                <td>{paid}</td>
+                <td>{transactionID}</td>
+            </tr>
+        </div>
 
     );
 };

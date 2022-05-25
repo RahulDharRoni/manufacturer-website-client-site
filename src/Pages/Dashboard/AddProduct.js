@@ -23,7 +23,7 @@ const AddProduct = () => {
             <div class=" card w-96 bg-base-100 shadow-xl">
                 <h1 className='font-bold text-center'>Add Product </h1>
                 <form onSubmit={handleSubmit(onSubmit)} className='p-3'>
-                    <input type="text" name='name' placeholder='Name' class="input input-bordered w-full mt-3" {...register("name", { required: true })} />
+                    <input type="text" name='name' placeholder='Product Name' class="input input-bordered w-full mt-3" {...register("name", { required: true })} />
                     <input type="text" name='description' placeholder='Description' class="input input-bordered w-full mt-3" {...register("description", { required: true })} />
 
                     <input type="url" name="img" placeholder="Image" class="input input-bordered w-full mt-3" {...register("img", { required: true })} />

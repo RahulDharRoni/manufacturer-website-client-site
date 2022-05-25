@@ -13,4 +13,4 @@ const AllOrders = ({ orders }) => {
     );
 };
 
-export default AllOrders; <h1>kjafajsdf</h1>
+export default AllOrders;

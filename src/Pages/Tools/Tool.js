@@ -11,8 +11,6 @@ const Tool = ({ tool }) => {
     }
     return (
         <div className='card w-64 bg-base-100 shadow-xl'>
-
-
             <figure class="px-10 pt-10">
                 <img src={img} alt="Shoes" class="rounded-xl" />
             </figure>

@@ -22,7 +22,7 @@ const MyOrders = () => {
     //         })
     // }, [])
 
-
+    console.log(user.email)
     const { data, refetch } = useQuery('orders', () => fetch(`http://localhost:5000/orders/myorders?email=${user.email}`).then(res => res.json()))
 
 
@@ -71,7 +71,7 @@ const MyOrders = () => {
                                     {/* <button onClick={() => setDeleteOrder(order)} className='btn btn-sm btn-primary'>Delete</button> */}
                                     <label onClick={() => setDeleteOrder(orders)} for="delete-model" class="btn modal-button">Delete</label>
                                 </td>
-                                <td>{(orders?.productPrice) && <Link to={`/dashboard/payment/${orders?._id}`}>
+                                <td>{(orders?.productPrice && !orders.paid) && <Link to={`/dashboard/payment/${orders?._id}`}>
                                     <button className='btn btn-sm btn-primary'>Pay</button></Link>}
 
                                     {(orders.productPrice) && <span>Payed</span>}

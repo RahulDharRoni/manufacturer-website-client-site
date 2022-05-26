@@ -6,7 +6,7 @@ const DeleteModal = ({ deleteOrder, setDeleteOrder, refetch, data }) => {
     const handleDelete = (_id) => {
         console.log(deleteOrder._id)
 
-        fetch(`http://localhost:5000/orders/${_id}`, {
+        fetch(`https://enigmatic-anchorage-69503.herokuapp.com/order/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
@@ -21,14 +21,14 @@ const DeleteModal = ({ deleteOrder, setDeleteOrder, refetch, data }) => {
     return (
 
         <div>
-            <input type="checkbox" id="delete-model" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                    <h3 class="font-bold text-lg">Do you want to Delete the Order??</h3>
-                    <p class="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
-                    <div class="modal-action">
+            <input type="checkbox" id="delete-model" className="modal-toggle" />
+            <div className="modal modal-bottom sm:modal-middle">
+                <div className="modal-box">
+                    <h3 className="font-bold text-lg">Do you want to Delete the Order??</h3>
+                    <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
+                    <div className="modal-action">
                         <button onClick={() => handleDelete(_id)} className='btn btn-primary'>Delete</button>
-                        <label for="delete-model" class="btn">Yay!</label>
+                        <label For="delete-model" className="btn">Yay!</label>
                     </div>
                 </div>
             </div>

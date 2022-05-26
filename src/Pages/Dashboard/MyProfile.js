@@ -11,7 +11,7 @@ const MyProfile = () => {
 
     const onSubmit = data => {
         console.log(data)
-        fetch('http://localhost:5000/profile', {
+        fetch('https://enigmatic-anchorage-69503.herokuapp.com/profile', {
             method: 'POST',
             headers: {
                 "content-type": "application/json"
@@ -24,23 +24,23 @@ const MyProfile = () => {
             })
     };
     return (
-        <div class="card card-side bg-base-100 w-50 bg-gray-100 p-10">
-            <div class="grid grid-cols-2 gap-3 items-center">
+        <div className="card card-side bg-base-100 w-50 bg-gray-100 p-10">
+            <div className="grid grid-cols-2 gap-3 items-center">
                 <div>
                     <img src={user.photoURL} alt="" width='100px' height='100px' className='rounded' />
                     {/* <img src="" alt=""/> */}
-                    <h1 class="text-3xl font-bold">Email: {user?.email}</h1>
-                    {(user.name === true) ? < h1 class="text-3xl font-bold">Name: <span>{user?.name}</span></h1> : <h1 class="text-3xl font-bold">Name : Not Found!</h1>}
+                    <h1 className="text-3xl font-bold">Email: {user?.email}</h1>
+                    {(user.name === true) ? < h1 className="text-3xl font-bold">Name: <span>{user?.name}</span></h1> : <h1 className="text-3xl font-bold">Name : Not Found!</h1>}
                 </div>
 
                 <form onSubmit={handleSubmit(onSubmit)} className='p-3'>
                     <h5>Update your Profile Information</h5>
-                    <input type="url" name="img" placeholder="Image" class="input input-bordered w-full mt-2" {...register("img", { required: true })} />
-                    <h2 class="card-title">Name:{user?.name}</h2>
-                    <input type="text" name='name' placeholder='Name' class="input input-bordered w-full mt-2" {...register("name", { required: true })} />
-                    <h2 class="card-title">Description:{user?.Description}</h2>
-                    <input type="text" name='description' placeholder='Description' class="input input-bordered w-full mt-2" {...register("description", { required: true })} />
-                    <button class="btn btn-primary mt-3">Place An Order</button>
+                    <input type="url" name="img" placeholder="Image" className="input input-bordered w-full mt-2" {...register("img", { required: true })} />
+                    <h2 className="card-title">Name:{user?.name}</h2>
+                    <input type="text" name='name' placeholder='Name' className="input input-bordered w-full mt-2" {...register("name", { required: true })} />
+                    <h2 className="card-title">Description:{user?.Description}</h2>
+                    <input type="text" name='description' placeholder='Description' className="input input-bordered w-full mt-2" {...register("description", { required: true })} />
+                    <button className="btn btn-primary mt-3">Place An Order</button>
 
                 </form>
             </div>

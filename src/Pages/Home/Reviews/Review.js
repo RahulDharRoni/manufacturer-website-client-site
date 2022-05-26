@@ -5,10 +5,10 @@ const Review = ({ reviewss }) => {
     const { name, review, description, img } = reviewss;
 
     return (
-        <div class="card w-64 bg-base-100 shadow-xl">
+        <div className="card w-64 bg-base-100 shadow-xl">
             <figure><img className='rounded-full w-24 h-24' src={img} alt="Shoes" /></figure>
-            <div class="card-body">
-                <h2 class="card-title">{name}</h2>
+            <div className="card-body">
+                <h2 className="card-title">{name}</h2>
                 <p className='text-sm font-gray-200'>{description}</p>
                 <div className=''>
                     <ReactStars

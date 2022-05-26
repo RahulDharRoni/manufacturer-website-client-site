@@ -14,7 +14,7 @@ const MyOrders = () => {
 
 
     console.log(user.email)
-    const { data, refetch } = useQuery('orders', () => fetch(`http://localhost:5000/orders/myorders?email=${user.email}`).then(res => res.json()))
+    const { data, refetch } = useQuery('orders', () => fetch(`https://enigmatic-anchorage-69503.herokuapp.com/orders/myorders?email=${user.email}`).then(res => res.json()))
 
 
     if (loading) {
@@ -24,8 +24,8 @@ const MyOrders = () => {
     return (
 
         <div className='w-full'>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>
@@ -51,7 +51,7 @@ const MyOrders = () => {
                                 <td>{(!orders.paid) ? <span className='text-red-500'>Pending</span> : <span className='text-gray-600'>Order Successful</span>}
                                 </td>
                                 <td>
-                                    {(!orders.paid) ? <label onClick={() => setDeleteOrder(orders)} for="delete-model" class="btn modal-button">Delete</label> : <h1 className='bg-yellow-500 p-2 rounded'>Order Shipping</h1>}
+                                    {(!orders.paid) ? <label onClick={() => setDeleteOrder(orders)} htmlFor="delete-model" className="btn modal-button">Delete</label> : <h1 className='bg-yellow-500 p-2 rounded'>Order Shipping</h1>}
                                 </td>
                                 <td>{(orders?.productPrice && !orders.paid) && <Link to={`/dashboard/payment/${orders?._id}`}>
                                     <button className='btn btn-sm btn-primary'>Pay</button></Link>}

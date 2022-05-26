@@ -6,7 +6,7 @@ import AdminUser from './AdminUser';
 const MakeAdmin = () => {
 
     const { isLoading, refetch, data } = useQuery('data', () =>
-        fetch('http://localhost:5000/users').then(res =>
+        fetch('https://enigmatic-anchorage-69503.herokuapp.com/users').then(res =>
             res.json()
         )
     )
@@ -17,8 +17,8 @@ const MakeAdmin = () => {
 
     return (
         <div>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th></th>

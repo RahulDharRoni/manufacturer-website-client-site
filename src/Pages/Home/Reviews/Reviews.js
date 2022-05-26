@@ -9,7 +9,7 @@ const Reviews = () => {
             <h1 className='text-center font-3xl font-bold my-6'>All Reviews</h1>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-2 m-5'>
                 {
-                    reviews?.slice(0, 3).reverse().map(reviewss => <Review reviewss={reviewss}></Review>)
+                    reviews?.slice(0, 3).reverse().map(reviewss => <Review key={reviewss._id} reviewss={reviewss}></Review>)
                 }
 
             </div>

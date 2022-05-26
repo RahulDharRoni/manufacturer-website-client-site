@@ -15,10 +15,10 @@ const CheckoutForm = ({ order }) => {
 
     useEffect(() => {
         // Create PaymentIntent as soon as the page loads
-        fetch("http://localhost:5000/create-payment-intro", {
+        fetch("https://enigmatic-anchorage-69503.herokuapp.com/create-payment-intro", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ productPrice }),
+            body: JSON.Reactstringify({ productPrice }),
         })
             .then((res) => res.json())
             .then((data) => {
@@ -80,12 +80,12 @@ const CheckoutForm = ({ order }) => {
                 transactionId: paymentIntent.id
             }
 
-            fetch(`http://localhost:5000/orders/${_id}`, {
+            fetch(`https://enigmatic-anchorage-69503.herokuapp.com/orders/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',
                 },
-                body: JSON.stringify(payment)
+                body: JSON.Reactstringify(payment)
             }).then(res => res.json())
                 .then(data => {
                     setProcessing(false);

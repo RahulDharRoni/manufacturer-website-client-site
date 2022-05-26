@@ -3,10 +3,7 @@ import Count from './Count';
 
 const Community = () => {
     return (
-        <div>
-
-            <Count></Count>
-        </div>
+        <><Count></Count></>
     );
 };
 

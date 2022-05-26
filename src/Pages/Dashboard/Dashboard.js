@@ -10,31 +10,22 @@ const Dashboard = () => {
     console.log(admin)
     return (
         <div>
-            <div class="drawer drawer-mobile">
-                <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-                <div class="drawer-content flex flex-col bg-slate-50">
+            <div className="drawer drawer-mobile">
+                <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
+                <div className="drawer-content flex flex-col bg-slate-50">
                     <h1 className='text-center text-3xl font-bold font-serif '>My DashBoard</h1>
                     <Outlet />
-                    <label for="" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+                    <label htmlFor="" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 
                 </div>
-                <div class="drawer-center bg-blue-900 ">
+                <div className="drawer-side bg-blue-900 ">
 
-                    <label for="" class="drawer-overlay"></label>
-                    <ul class="menu p-4 overflow-y-auto w-80 bg- text-base-content text-white">
-                        <h1 className='bg-black p-5'>My Dashboard</h1>
+                    <label htmlFor="" className="drawer-overlay"></label>
+                    <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content text-white bg-blue-900">
                         <li><Link to='/dashboard'>My Profile</Link></li>
 
                         <li><Link to='/dashboard/myorders'>My Order</Link></li>
                         <li><Link to='/dashboard/addreviews'>My Reviews</Link></li>
-
-
-
-                        {/* <li><Link to='/dashboard/addreviews'>My Reviews</Link></li> */}
-                        {/* {!admin && <li><Link to="/dashboard">My Order</Link></li>} */}
-                        {/* {!admin && <li><Link to="/dashboard/review">Add Review</Link></li>} */}
-
-
                         {admin && <>
                             <li><Link to='/dashboard/manageorders'>Manage Orders</Link></li>
                             <li><Link to='/dashboard/manageproducts'>Manage Products</Link></li>
@@ -50,7 +41,7 @@ const Dashboard = () => {
 
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

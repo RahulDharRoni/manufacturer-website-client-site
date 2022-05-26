@@ -4,7 +4,7 @@ const AdminUser = ({ showUser, refetch, index }) => {
     const { email, roll } = showUser;
 
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/users/admin/${email}`, {
+        fetch(`https://enigmatic-anchorage-69503.herokuapp.com/user/admin/${email}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

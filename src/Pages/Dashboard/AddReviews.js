@@ -9,7 +9,7 @@ const AddReviews = () => {
 
     const onSubmit = data => {
         // console.log(data)
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://enigmatic-anchorage-69503.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 "content-type": "application/json"
@@ -27,26 +27,26 @@ const AddReviews = () => {
 
     return (
         <div className='w-96 mx-auto'>
-            <div class=" card w-96 bg-base-100 shadow-xl">
+            <div className=" card w-96 bg-base-100 shadow-xl">
                 <h1 className='font-bold text-center'>Add Product </h1>
                 <form onSubmit={handleSubmit(onSubmit)} className='p-3'>
-                    <input type="text" name='name' placeholder='Name' class="input input-bordered w-full mt-3" {...register("name", { required: true })} />
-                    <input type="text" name='description' placeholder='Review' class="input input-bordered w-full mt-3" {...register("description", { required: true })} />
+                    <input type="text" name='name' placeholder='Name' className="input input-bordered w-full mt-3" {...register("name", { required: true })} />
+                    <input type="text" name='description' placeholder='Review' className="input input-bordered w-full mt-3" {...register("description", { required: true })} />
 
-                    <input type="url" name="img" placeholder="Image" class="input input-bordered w-full mt-3" {...register("img", { required: true })} />
-                    <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Give Rating</label>
-                    <select name={review} class="input input-bordered w-full mt-3" {...register("review", { required: true })}>
+                    <input type="url" name="img" placeholder="Image" className="input input-bordered w-full mt-3" {...register("img", { required: true })} />
+                    <label htmlFor="countries" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Give Rating</label>
+                    <select name={review} className="input input-bordered w-full mt-3" {...register("review", { required: true })}>
                         <option selected>Choose A review</option>
                         <option value="5">5</option>
                         <option value="4">4</option>
                         <option value="3">3</option>
                         <option value="2">2</option>
                     </select>
-                    <button class="btn btn-primary mt-3">Place An Order</button>
+                    <button className="btn btn-primary mt-3">Place An Order</button>
 
                 </form>
             </div>
-        </div>
+        </div >
     );
 };
 

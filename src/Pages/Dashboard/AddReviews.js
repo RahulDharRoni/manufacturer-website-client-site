@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useForm } from "react-hook-form";
-import ReactStars from "react-rating-stars-component";
-
+import { toast } from 'react-toastify';
 
 
 const AddReviews = () => {
@@ -22,10 +21,10 @@ const AddReviews = () => {
                 console.log(data)
                 setReviews(null)
             })
+        toast("Wow so easy!")
+
     };
-    // const ratingChanged = (newRating) => {
-    //     console.log(newRating);
-    // };
+
     return (
         <div className='w-96 mx-auto'>
             <div class=" card w-96 bg-base-100 shadow-xl">

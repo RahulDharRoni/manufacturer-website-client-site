@@ -1,30 +1,34 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const Order = ({ buy }) => {
+const Order = ({ buy, quan }) => {
     const { _id, name, price, quantity } = buy
     const [user, loading] = useAuthState(auth)
-    // let location = useLocation();
     const navigate = useNavigate()
 
     if (loading) {
         return <Loading></Loading>
     }
+
     const handleOrder = (event) => {
         event.preventDefault()
         // const fname = event.target.uName.value;
         const number = event.target.number.value;
         const address = event.target.address.value;
+        const newQuantity = parseInt(quan.orderQuandity) + parseInt(quantity)
+        console.log(newQuantity)
         const orders = {
             orderId: _id,
             uName: user.displayName,
             email: user.email,
             productName: name,
             productPrice: price,
-            productQuantity: quantity,
+            productQuantity: newQuantity,
             phonNumber: number,
             Address: address
         }
@@ -38,10 +42,15 @@ const Order = ({ buy }) => {
             .then(req => req.json())
             .then(data => {
                 console.log(data)
-                navigate('/tools')
+                toast("Congratulation !Order Successful! ")
+                navigate('/')
             })
         console.log(orders)
+
+        // toHaveStyle("Congratulation !Order Successful! ")
     }
+    const newQuantity = parseInt(quan.orderQuandity) + parseInt(quantity)
+    console.log(newQuantity)
     return (
 
         <div class="card-actions">
@@ -57,7 +66,8 @@ const Order = ({ buy }) => {
                 </div>
                 <input type="text" disabled name='Pname' value={name} class="input input-bordered input-gray-200 w-full max-w-xs mt-3" />
                 <input type="text" disabled value={`Price :${price}`} class="input input-bordered input-gray-200 w-full max-w-xs mt-3" />
-                <input type="text" disabled value={`Quantity :${quantity}`} class="input input-bordered input-gray-200 w-full max-w-xs mt-3" />
+                <input type="text" disabled value={`Quantity : ${newQuantity}`} class="input input-bordered input-gray-200 w-full max-w-xs mt-3" />
+                {/* <input type="text" disabled value={`Quantity You Ordering : ${quan.orderQuandity}`} class="input input-bordered input-gray-200 w-full max-w-xs mt-3 " /> */}
                 <button class="btn btn-outline mt-3">Place An Order</button>
 
             </form>

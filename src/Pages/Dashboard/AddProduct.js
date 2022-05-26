@@ -1,8 +1,11 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const AddProduct = () => {
     const { register, handleSubmit } = useForm();
+    const navigate = useNavigate()
 
     const onSubmit = data => {
         // console.log(data)
@@ -16,6 +19,8 @@ const AddProduct = () => {
             .then(req => req.json())
             .then(data => {
                 console.log(data)
+                toast("You Product is addedd successfully!")
+                navigate('/tools')
             })
     };
     return (

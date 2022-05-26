@@ -7,8 +7,8 @@ const HomeTools = () => {
     const [tools, useTools] = useCommonTools()
     return (
         <div>
-            <h1 className='text-center font-3xl font-bold my-6'>Tool</h1>
-            <div class="grid grid-cols-4 gap-4">
+            <h1 className='text-center font-3xl font-bold my-6 text-3xl font-serif'>Tool</h1>
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-2">
                 {
                     tools.slice(0, 6).reverse().map(tool => <Tool
                         key={tool.id}

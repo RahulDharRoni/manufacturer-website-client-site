@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AdminUser = ({ showUser, refetch }) => {
+const AdminUser = ({ showUser, refetch, index }) => {
     const { email, roll } = showUser;
 
     const makeAdmin = () => {
@@ -18,9 +18,9 @@ const AdminUser = ({ showUser, refetch }) => {
     }
     return (
         <tr>
-            <th>1</th>
+            <th>{index + 1}</th>
             <td>{email}</td>
-            <td>{roll !== 'admin-user' && <button onClick={makeAdmin} className='btn btn-primary'>Admin</button>}</td>
+            <td>{roll !== 'admin' && <button onClick={makeAdmin} className='btn btn-primary'>Admin</button>}</td>
             <td><button className='btn btn-primary'>Remove Admin</button></td>
         </tr >
     );

@@ -4,7 +4,6 @@ import Loading from '../Loading/Loading';
 import AdminUser from './AdminUser';
 
 const MakeAdmin = () => {
-    // const [showUsers, setShowUsers] = useState()
 
     const { isLoading, refetch, data } = useQuery('data', () =>
         fetch('http://localhost:5000/users').then(res =>
@@ -34,6 +33,7 @@ const MakeAdmin = () => {
                                 key={showUser._id}
                                 showUser={showUser}
                                 refetch={refetch}
+                                index
                             >
                             </AdminUser>)
                         }

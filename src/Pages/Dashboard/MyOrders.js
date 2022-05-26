@@ -51,7 +51,7 @@ const MyOrders = () => {
                                 <td>{(!orders.paid) ? <span className='text-red-500'>Pending</span> : <span className='text-gray-600'>Order Successful</span>}
                                 </td>
                                 <td>
-                                    <label onClick={() => setDeleteOrder(orders)} for="delete-model" class="btn modal-button">Delete</label>
+                                    {(!orders.paid) ? <label onClick={() => setDeleteOrder(orders)} for="delete-model" class="btn modal-button">Delete</label> : <h1 className='bg-yellow-500 p-2 rounded'>Order Shipping</h1>}
                                 </td>
                                 <td>{(orders?.productPrice && !orders.paid) && <Link to={`/dashboard/payment/${orders?._id}`}>
                                     <button className='btn btn-sm btn-primary'>Pay</button></Link>}
